@@ -10,7 +10,7 @@
   'use strict';
 
   var ESCAPE_DELIMITERS = ['|', '^'],
-      CELL_DELIMITERS = [',', ';', '\t', '|', '^'],
+      CELL_DELIMITERS = [',', ';', '\t', '^'],
       LINE_DELIMITERS = ['\r\n', '\r', '\n'];
 
   function isObject(object) {
@@ -24,6 +24,8 @@
     return typeof object === 'string';
   }
   function isNumber(object) {
+    if (object === "")
+        return false;
     return !isNaN(Number(object));
   }
   function isBoolean(value) {
